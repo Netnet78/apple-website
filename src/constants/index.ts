@@ -101,7 +101,7 @@ const features = [
     icon: "/feature-icon4.svg",
     highlight: "AirDrop.",
     text: "Wirelessly share photos, large files, and more between your iPhone, your Mac, & other devices.",
-    styles: "right-5 md:right-20 top-[70%] opacity-0 translate-y-5",
+    styles: "right-5 md:right-20 top-[60%] opacity-0 translate-y-5",
   },
   {
     id: 5,

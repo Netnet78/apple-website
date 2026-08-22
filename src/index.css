@@ -282,13 +282,14 @@ body {
       @apply text-white font-semibold text-3xl lg:text-7xl text-center max-w-3xl mx-auto;
     }
 
-    #f-canvas {
+    #feature-canvas {
       @apply !w-full !h-dvh relative z-40;
     }
 
     .box {
-      @apply max-w-xs absolute;
-
+      @apply max-w-xs absolute z-50 lg:z-0 
+      px-10 py-5 rounded-md
+      backdrop-blur-3xl;
       p {
         @apply lg:h3-semibold base-semibold;
       }
