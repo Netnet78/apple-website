@@ -313,8 +313,8 @@ body {
       .left-column {
         @apply flex flex-col justify-between gap-5 opacity-0 -translate-y-5;
 
-        div:first-of-type {
-          @apply h-full bg-[url(/highlight-bg.png)] bg-no-repeat bg-cover p-10 2xl:pt-32 lg:pt-20 rounded-3xl;
+        .first-highlight {
+          @apply h-full bg-no-repeat bg-cover p-10 2xl:pt-32 lg:pt-20 rounded-3xl overflow-hidden relative;
 
           p {
             @apply font-semibold text-4xl max-w-2xs;

@@ -30,9 +30,17 @@ const Highlights = () => {
 
       <div className="masonry">
         <div className="left-column">
-          <div>
-            <img src="/laptop.png" alt="Laptop" />
-            <p>Fly through demanding tasks up to 9.8x faster.</p>
+          <div className="first-highlight">
+            <img className="z-10" src="/laptop.png" alt="Laptop" />
+            <p className="z-10">
+              Fly through demanding tasks up to 9.8x faster.
+            </p>
+            <div className="bg-black/50 w-full h-full absolute inset-0 -z-1"></div>
+            <img
+              src="/highlight-bg.png"
+              alt="Highlight Background"
+              className="w-full absolute inset-0 -z-10"
+            />
           </div>
           <div>
             <img src="/sun.png" alt="Sun" />
