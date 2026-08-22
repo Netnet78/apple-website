@@ -1,34 +1,55 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Showcase = () => {
   const isTablet = useMediaQuery({ query: "(max-width:1024px)" });
+  const showcaseRef = useRef<HTMLElement>(null);
 
-  useGSAP(() => {
-    if (!isTablet) {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#showcase",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          pin: true,
-        },
-      });
+  useGSAP(
+    () => {
+      if (!isTablet) {
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: showcaseRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            pin: true,
+          },
+        });
 
-      timeline
-        .to(".mask img", {
-          transform: "scale(1.1)",
-        })
-        .to(".content", { opacity: 1, y: 0, ease: "power1.in" });
-    }
-  }, [isTablet]);
+        timeline
+          .to(".mask img", {
+            transform: "scale(1.1)",
+          })
+          .to(".content", { opacity: 1, y: 0, ease: "power1.in" });
+      }
+    },
+    {
+      scope: showcaseRef,
+      dependencies: [isTablet],
+      revertOnUpdate: true,
+    },
+  );
 
   return (
-    <section id="showcase">
+    <section
+      id="showcase"
+      ref={showcaseRef}
+      onLoad={() => ScrollTrigger.refresh()}
+    >
       <div className="media">
-        <video src="/videos/game.mp4" loop muted autoPlay playsInline />
+        <video
+          src="/videos/game.mp4"
+          loop
+          muted
+          autoPlay
+          playsInline
+          onLoadedMetadata={() => ScrollTrigger.refresh()}
+        />
         <div className="mask">
           <img src="/mask-logo.svg" />
         </div>
