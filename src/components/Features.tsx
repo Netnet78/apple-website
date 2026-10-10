@@ -105,7 +105,7 @@ const ModelScroll = () => {
 
 const Features = () => {
   return (
-    <section id="features">
+    <section id="features" className="mb-16">
       <h2>See it all in a new light</h2>
 
       <Canvas id="feature-canvas" camera={{}}>

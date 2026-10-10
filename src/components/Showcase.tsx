@@ -51,7 +51,7 @@ const Showcase = () => {
           onLoadedMetadata={() => ScrollTrigger.refresh()}
         />
         <div className="mask">
-          <img src="/mask-logo.svg" />
+          <img src="/mask-logo.svg" alt="M4 Chip Logo" />
         </div>
       </div>
 
